@@ -9,13 +9,21 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+
+        TabView{
+            MainView()
+                .tabItem{
+                    Label("Main", systemImage:"house")
+                }
+            TodoView()
+                .tabItem {
+                    Label("Todo", systemImage: "list.bullet")
+                }
+            GeneralSettingsView()
+                .tabItem{
+                    Label("General", systemImage: "gear")
+                }
         }
-        .padding()
     }
 }
 
@@ -24,3 +32,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
